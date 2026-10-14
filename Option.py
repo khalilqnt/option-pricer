@@ -24,11 +24,3 @@ class Put(Option):
     def payoff(self, S_T):
         return np.maximum(self.strike - S_T, 0)
 
-if __name__ == "__main__":
-    c = Call(strike=100, maturity=1)
-    p = Put(strike=100, maturity=1)
-    S_T = np.linspace(50, 150, 100)
-    plt.plot(S_T, c.payoff(S_T), label="Call payoff")
-    plt.plot(S_T, p.payoff(S_T), label="Put payoff")
-    plt.legend()
-    plt.show()
